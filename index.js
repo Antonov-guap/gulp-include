@@ -13,7 +13,6 @@ var extensions = null,
 
 module.exports = function (params) {
     var params = params || {};
-    includedFiles = [];
     extensions = null;
 
     if (params.extensions) {
@@ -21,6 +20,7 @@ module.exports = function (params) {
     }
 
     function include(file, callback) {
+      includedFiles = [];
       if (file.isNull()) {
         return callback(null, file);
       }
